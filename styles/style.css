@@ -238,19 +238,22 @@
   inline-size: 100%;
 }
 
-.footer__title {
+.footer {
   display: grid;
   justify-items: center;
   align-items: center;
-  grid-template-columns: 1fr;
+  margin-block-start: 40px;
   min-height: 668px;
+  height: 100vh;
+}
+
+.footer__title {
   font-family: var(--main-font, monospace);
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   text-shadow: 2px 2px 0 var(--color-shadow);
   color: var(--color-header);
   line-height: 82.5%;
   font-weight: 700;
-  margin-block-start: 40px;
 }  
 
 
@@ -344,10 +347,13 @@
     grid-column: 2/4;
   }
 
-  .footer__title {
-    height: 100vh;
+  .footer {
     min-height: 1024px;
     margin-block-start: 60px;
+  }
+
+  .footer__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 }
 
@@ -396,7 +402,7 @@
     gap: 10px;
   }
 
-  .footer__title {
+  .footer {
     min-height: 768px;
     margin-block-start: 60px;
   }
