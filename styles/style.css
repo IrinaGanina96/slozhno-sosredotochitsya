@@ -2,7 +2,7 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
-  font-family: var(--main-font);
+  font-family: var(--main-font, monospace);
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -19,6 +19,7 @@
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
   align-items: center;
+  height: 100vh;
   min-block-size: 668px;
   padding-inline: 10px;
   padding-block: 10px;
@@ -32,6 +33,7 @@
 }
 
 .pseudo__element {
+  display: var(--display);
   position: absolute;
   inset-block-start: 0;
   inset-inline-end: 0;
@@ -51,7 +53,7 @@
   inline-size: 9px;
   border-radius: 50%;
   background-color: var(--color-accent);
-  box-shadow: 0px 0px 4px 2px var(--color-accent);
+  box-shadow: 0 0 4px 2px var(--color-accent);
   inset-block-start: 18px;
   inset-inline-end: 19px;
 }
@@ -93,8 +95,7 @@
 }
 
 .header__theme-menu-button:hover {
-  border-block-end: 1px solid var(--menu-color);
-  outline: none;
+  outline: 1px solid var(--color-accent-hover);
 }
 
 .header__theme-menu-button:focus {
@@ -102,19 +103,16 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  outline: 1px solid var(--color-accent-hover);
+  border-block-end: 1px solid var(--menu-color);
 }
 
 .header__theme-menu-button_active {
   outline: 1px solid var(--menu-color);
-}
-
-button:disabled {
   pointer-events: none;
 }
 
 .header__title {
-  font-family: var(--main-font);
+  font-family: var(--main-font, monospace);
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   text-shadow: 4px 4px 0 var(--color-accent);
   color: var(--color-header);
@@ -240,13 +238,13 @@ button:disabled {
   inline-size: 100%;
 }
 
-.footer {
+.footer__title {
   display: grid;
   justify-items: center;
   align-items: center;
   grid-template-columns: 1fr;
   min-height: 668px;
-  font-family: var(--main-font);
+  font-family: var(--main-font, monospace);
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   text-shadow: 2px 2px 0 var(--color-shadow);
   color: var(--color-header);
@@ -346,8 +344,8 @@ button:disabled {
     grid-column: 2/4;
   }
 
-  .footer {
-    font-size: clamp(7.5rem, 6.2027rem + 5.6402vw, 9.8125rem);
+  .footer__title {
+    height: 100vh;
     min-height: 1024px;
     margin-block-start: 60px;
   }
@@ -398,7 +396,7 @@ button:disabled {
     gap: 10px;
   }
 
-  .footer {
+  .footer__title {
     min-height: 768px;
     margin-block-start: 60px;
   }
