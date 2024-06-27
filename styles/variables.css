@@ -2,7 +2,7 @@
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
-:root{
+:root {
   --cover-image: url(../images/cover-image-dark.png);
   --main-font: 'IBM Plex mono';
   --main-font-size: 18px;
